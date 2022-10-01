@@ -1,0 +1,23 @@
+body {
+    background-image: url('assets/images/backgroundImage.jpg')
+}
+
+.main {
+    width: 100%;
+}
+
+.list {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.list__item {
+    width: 25%;
+    margin-left: 20px;
+}
+
+.list__img {
+    width: 150px;
+}

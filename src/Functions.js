@@ -8,8 +8,6 @@ export function compareByCapital(a, b) {
     return 0
 }
 
-
-
 export function compareByRegion(a, b) {
     if(a.region < b.region) {
         return -1
