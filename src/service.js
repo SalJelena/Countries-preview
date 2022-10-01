@@ -3,10 +3,7 @@ import axios from 'axios'
 
 
 
-
-
-
-const BASE = 'https://restcountries.eu/rest/v2'
+const BASE = 'https://restcountries.com/v2'
 const ALL = '/all'
 
 
