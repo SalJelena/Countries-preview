@@ -438,6 +438,8 @@ body {
           flex-direction: column;
   font-family: "Poppins", sans-serif;
   background-image: url("../images/backgroundImage2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .scroll-disabled {
@@ -490,18 +492,14 @@ button:focus {
 }
 
 .btn {
-  background-color: #fff;
-  padding: 10px 20px;
-  font-family: "Poppins", sans-serif;
-  color: #3a3a3a;
-  border-radius: 10px;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #808080;
-  color: #fff;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 /* --------------------------------------------------------------

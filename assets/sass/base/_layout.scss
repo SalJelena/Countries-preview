@@ -10,6 +10,8 @@ body {
 	flex-direction: column;
 	font-family: $font-headings;
 	background-image: url('../images/backgroundImage2.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .scroll-disabled {
