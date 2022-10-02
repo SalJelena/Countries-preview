@@ -3,6 +3,7 @@ export const Country = (country, index, onlyCountry) => {
     const divCountry = document.createElement('div')
     divCountry.className = 'list__item'
     divCountry.id = index
+    // divCountry.href = 'javascript:;'
 
     const p = document.createElement('p')
     p.className = 'list__title'

@@ -1,0 +1,23 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.9px);
+    -webkit-backdrop-filter: blur(4.9px);
+    padding: 40px;
+    margin-bottom: 50px;
+}
+
+.list__item {
+    width: 20%;
+    margin-bottom: 20px;
+    color: $grey;
+}
+
+.list__img {
+    width: 150px;
+}

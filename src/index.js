@@ -13,7 +13,7 @@ const randomCountriesView = (countries) => {
     let showCountries = new Set()
 
     if(countries.length != 1)
-        while(showCountries.size <= 15){
+        while(showCountries.size < 15){
             let random = Math.floor(Math.random() * countries.length)
             showCountries = showCountries.add(countries[random])
         }
