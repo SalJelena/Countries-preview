@@ -10,6 +10,7 @@ export const Country = (country, index, onlyCountry) => {
 
     const capital = document.createElement('p')
     capital.textContent = `Capital: ${country.capital}`
+    capital.className = 'list__desc'
 
     const img = document.createElement('img')
     img.src = country.flag

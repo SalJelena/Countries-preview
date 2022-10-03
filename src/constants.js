@@ -11,7 +11,10 @@ export const btnPrevious = document.createElement('button')
 export const btnNext = document.createElement('button')
 export const btnBack = document.createElement('button')
 
-divButtons.className = 'div-all-buttons'
-btnPrevious.className = 'btnPrevious'
-btnBack.className = 'btnBack'
-btnNext.className = 'btnNext'
+divButtons.className = 'list__buttons'
+btnPrevious.className = 'btn'
+btnPrevious.classList.add('btn--nav')
+btnBack.className = 'btn'
+btnBack.classList.add('btn--nav')
+btnNext.className = 'btn'
+btnNext.classList.add('btn--nav')
