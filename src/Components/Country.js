@@ -23,6 +23,7 @@ export const Country = (country, index, onlyCountry) => {
         namesLang += language.name + ` `
     })
     languages.textContent = namesLang
+    languages.className = 'list__info'
 
     const timezones = document.createElement('p')
     let times = `Timezones: `
@@ -30,6 +31,7 @@ export const Country = (country, index, onlyCountry) => {
         times += timezone + ` `
     })
     timezones.textContent = times
+    timezones.className = 'list__info'
 
    if (onlyCountry) {
        divCountry.append(p, capital, languages, timezones, img)

@@ -11,6 +11,10 @@ export const btnPrevious = document.createElement('button')
 export const btnNext = document.createElement('button')
 export const btnBack = document.createElement('button')
 
+export const btnPrevSpan = document.createElement('span')
+export const btnBackSpan = document.createElement('span')
+export const btnNextSpan = document.createElement('span')
+
 divButtons.className = 'list__buttons'
 btnPrevious.className = 'btn'
 btnPrevious.classList.add('btn--nav')

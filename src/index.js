@@ -1,7 +1,7 @@
 import { Countries } from "./Components/Countries.js"
 import { Country } from "./Components/Country.js"
 import { getAllCountries } from "./service.js"
-import { main, btnPrevious, btnNext, btnBack, divButtons, btnRandom} from "./constants.js"
+import { main, btnPrevious, btnNext, btnBack, divButtons, btnRandom, btnPrevSpan, btnBackSpan, btnNextSpan} from "./constants.js"
 // import { compareByCapital, compareByRegion } from "./Functions.js"
 // import Select from "./Components/Select.js";
 
@@ -45,9 +45,16 @@ getAllCountries().then((res) => {
 
             main.append(Country(countriesAll[index], index, true))
 
-            btnPrevious.textContent = '< Previous'
-            btnBack.textContent = 'Go Back'
-            btnNext.textContent = 'Next >'
+
+
+            btnPrevSpan.textContent = '< Previous'
+            btnBackSpan.textContent = 'Go Back'
+            btnNextSpan.textContent = 'Next >'
+
+            btnPrevious.append(btnPrevSpan)
+            btnBack.append(btnBackSpan)
+            btnNext.append(btnNextSpan)
+
             divButtons.append(btnPrevious, btnBack, btnNext)
             main.append(divButtons)
 
