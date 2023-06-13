@@ -539,6 +539,11 @@ button:focus {
   font-size: 23px;
   font-weight: 600;
 }
+@media only screen and (max-width: 991.98px) {
+  .header__logo-title {
+    font-size: 16px;
+  }
+}
 
 .nav__list {
   display: flex;
@@ -547,9 +552,19 @@ button:focus {
 .nav__item {
   margin: 0 15px;
 }
+@media only screen and (max-width: 991.98px) {
+  .nav__item {
+    margin: 0 5px;
+  }
+}
 .nav__link {
   color: #fff;
   font-size: 16px;
+}
+@media only screen and (max-width: 991.98px) {
+  .nav__link {
+    font-size: 14px;
+  }
 }
 
 .list {
@@ -591,6 +606,11 @@ button:focus {
 .list__item:hover .list__icon {
   visibility: visible;
   opacity: 1;
+}
+@media only screen and (max-width: 991.98px) {
+  .list__item {
+    width: 100%;
+  }
 }
 
 .list__img {
@@ -661,11 +681,21 @@ button:focus {
   justify-content: space-between;
   align-items: center;
 }
+@media only screen and (max-width: 991.98px) {
+  .banner__inner {
+    flex-direction: column;
+  }
+}
 .banner__controls {
   display: flex;
   height: 100%;
   align-items: center;
   width: 50%;
+}
+@media only screen and (max-width: 991.98px) {
+  .banner__controls {
+    width: 100%;
+  }
 }
 .banner__form {
   width: 100%;
@@ -680,6 +710,11 @@ button:focus {
   display: block;
   font-family: "Poppins", sans-serif;
   margin-bottom: 15px;
+}
+@media only screen and (max-width: 991.98px) {
+  .banner__label {
+    font-size: 20px;
+  }
 }
 .banner__input {
   outline: none;
