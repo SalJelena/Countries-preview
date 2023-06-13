@@ -1,8 +1,9 @@
+import {v4 as uuidv4} from 'uuid';
+
 export const Country = (country, index, onlyCountry) => {
-    
+
     const divCountry = document.createElement('div')
     divCountry.className = 'list__item'
-    divCountry.id = index
 
     const p = document.createElement('p')
     p.className = 'list__title'
@@ -33,13 +34,19 @@ export const Country = (country, index, onlyCountry) => {
     timezones.textContent = times
     timezones.className = 'list__info'
 
-   if (onlyCountry) {
-       divCountry.append(p, capital, languages, timezones, img)
-       divCountry.className = 'list__single-item'
-   } else {
-        divCountry.append(p, capital, img)
-   }
-       
+    const iconHolder = document.createElement('div')
+    const iconImg = document.createElement('img')
+    iconImg.src = "assets/images/right-arrow.png"
+    iconHolder.className = 'list__icon'
+    iconHolder.append(iconImg)
+
+    if (onlyCountry) {
+        divCountry.append(p, capital, languages, timezones, img)
+        divCountry.className = 'list__single-item'
+    } else {
+        divCountry.append(p, img, iconHolder)
+    }
+
     return divCountry
 }
 

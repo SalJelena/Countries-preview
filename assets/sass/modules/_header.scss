@@ -1,3 +1,37 @@
 .header {
-    padding: 50px 0;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.9px);
+
+  &__inner {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-title {
+    color: $white;
+    letter-spacing: 1.2px;
+    font-size: 23px;
+    font-weight: 600;
+  }
+
+}
+
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    margin: 0 15px;
+  }
+
+  &__link {
+    color: $white;
+    font-size: 16px;
+  }
 }

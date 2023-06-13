@@ -9,22 +9,58 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 </head>
 
 <body>
-    <header class="header">
-        <div class="wrap">
-            <button type="button" class="header__btn btn js-btn-random">
-                <span>Randomize countries</span>
-            </button>
+<header class="header">
+    <div class="wrap">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/" class="header__logo-title">COUNTRIES</a>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/" class="nav__link">Countries</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </header>
-    <main class="main">
+    </div>
+</header>
+<main class="main">
+    <div class="banner">
         <div class="wrap">
-            <div class="list js-list"></div>
+            <div class="banner__inner">
+                <div class="banner__controls">
+                    <form class="banner__form form">
+                        <label for="input-search" class="banner__label header__label">Search for country</label>
+                        <div class="banner__control">
+                            <input type="text" id="input-search"
+                                   class="banner__input header__input header__input--text js-input-search"
+                            />
+                            <button type="submit" class="banner__btn">
+                                <img src="assets/images/right-arrow.png" alt="Arrow search"/>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="banner__image-holder">
+                    <img src="assets/images/earth3.png" alt="Hero image of earth">
+                </div>
+            </div>
         </div>
-    </main>
+    </div>
+    <div class="wrap">
+        <div class="list js-list"></div>
+    </div>
+</main>
+<footer></footer>
 </body>
 
 </html>

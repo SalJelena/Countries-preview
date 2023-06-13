@@ -1,9 +1,11 @@
-export const divSelect = document.querySelector("#select")
+export const divSelect = document.querySelector(".select")
 export const main = document.querySelector(".js-list")
 export const inputFilter = document.querySelector("#input-search")
 export const divInput = document.querySelector('#input')
 export const selectSort = document.querySelector('#sort')
 export const btnRandom = document.querySelector('.js-btn-random')
+
+export const form = document.querySelector('.form')
 
 //Creating the buttons
 export const divButtons = document.createElement('div')

@@ -1,0 +1,63 @@
+.banner {
+  padding: 50px 0;
+
+  &__inner {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__controls {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 50%;
+  }
+
+  &__form {
+    width: 100%;
+    position: relative;
+  }
+
+  &__control {
+    position: relative;
+  }
+
+  &__label {
+    font-size: 40px;
+    color: $white;
+    display: block;
+    font-family: $font-default;
+    margin-bottom: 15px;
+  }
+
+  &__input {
+    outline: none;
+    border: 0;
+    background-color: $white;
+    border-radius: 0;
+    font-family: $font-default;
+    height: 50px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 15px;
+      object-fit: cover;
+    }
+
+  }
+
+}

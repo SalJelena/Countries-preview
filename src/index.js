@@ -1,51 +1,56 @@
-import { Countries } from "./Components/Countries.js"
-import { Country } from "./Components/Country.js"
-import { getAllCountries } from "./service.js"
-import { main, btnPrevious, btnNext, btnBack, divButtons, btnRandom, btnPrevSpan, btnBackSpan, btnNextSpan} from "./constants.js"
-// import { compareByCapital, compareByRegion } from "./Functions.js"
-// import Select from "./Components/Select.js";
+import {Countries} from "./Components/Countries.js"
+import {Country} from "./Components/Country.js"
+import {getAllCountries} from "./service.js"
+import {
+    main,
+    btnPrevious,
+    btnNext,
+    btnBack,
+    divButtons,
+    btnPrevSpan,
+    btnBackSpan,
+    btnNextSpan, divInput, inputFilter, form, divSelect
+} from "./constants.js"
+import Select from "./Components/Select";
 
 let countries = []
 let countriesAll = []
-let viewCountries = new Set()
 
-const randomCountriesView = (countries) => {
-    let showCountries = new Set()
-
-    if(countries.length != 1)
-        while(showCountries.size < 15){
-            let random = Math.floor(Math.random() * countries.length)
-            showCountries = showCountries.add(countries[random])
-        }
-
-    showCountries = Array.from(showCountries)
-    
-    return showCountries
-}
+let filteredCountries = [...countriesAll]
 
 getAllCountries().then((res) => {
     main.innerHTML = ''
     countries = res.data
-    viewCountries = randomCountriesView(countries)
-    countriesAll =  Array.from(viewCountries)
+    countriesAll = Array.from(countries)
     main.append(...Countries(countriesAll, false))
 
-    btnRandom.addEventListener('click', () => {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault()
+
+        filteredCountries = countries.filter(country => country.name.toLocaleLowerCase().includes(inputFilter.value.toLowerCase()))
+
         main.innerHTML = ''
-        viewCountries = randomCountriesView(countries)
-        countriesAll =  Array.from(viewCountries)
-        main.append(...Countries(countriesAll, false))    
+        main.append(...Countries(filteredCountries, false))
+        inputFilter.value = ""
     })
 
     main.addEventListener('click', (e) => {
 
-        if(e.target.tagName == 'IMG'){
-            let index = e.target.closest('div').id
-            main.innerHTML = ''
-
-            main.append(Country(countriesAll[index], index, true))
+        if (e.target.tagName === 'IMG') {
+            let parentBlock = e.target.parentNode
+            let index = [...parentBlock.parentElement.children].indexOf(parentBlock)
 
 
+            for (let i = 0; i < countriesAll.length; i++) {
+                if (i === index) {
+                    main.innerHTML = ''
+                    if (filteredCountries.length > 0) {
+                        main.append(Country(filteredCountries[index], index, true))
+                    } else {
+                        main.append(Country(countriesAll[index], index, true))
+                    }
+                }
+            }
 
             btnPrevSpan.textContent = '< Previous'
             btnBackSpan.textContent = 'Go Back'
@@ -60,21 +65,22 @@ getAllCountries().then((res) => {
 
             btnBack.addEventListener('click', () => {
                 main.innerHTML = ''
+                filteredCountries = countriesAll
                 main.append(...Countries(countriesAll, false))
             })
 
             btnPrevious.addEventListener('click', () => {
-               if(index > 0){
+                if (index > 0) {
                     index = --index
                     main.innerHTML = ''
                     main.append(Country(countriesAll[index], index, true))
                     divButtons.append(btnPrevious, btnBack, btnNext)
                     main.append(divButtons)
-               }
+                }
             })
 
             btnNext.addEventListener('click', () => {
-                if(index < countriesAll.length - 1){
+                if (index < countriesAll.length - 1) {
                     index = ++index
                     main.innerHTML = ''
                     main.append(Country(countriesAll[index], index, true))
@@ -85,51 +91,31 @@ getAllCountries().then((res) => {
         }
     })
 })
-
-
-
-// //Generator of different select options
-// const generateSelect = (countries) => {
-
-//     let filter = []
+//
+// const generateSelect = (arr) => {
+//
+//     let options = new Set(countries.map(country => {
+//         if (!country.region) {
+//             return 'Other'
+//         }
+//         return country.region
+//     }))
+//
 //     divSelect.innerHTML = ''
-
-//     let select = Select(countries.map(country => country.region))
-
-//     select.addEventListener('change', ()=> {
-//       filter = countries.filter(country => country.region == select.value)
-//       showCountries = filter
-//       main.innerHTML = ''
-//       main.append(...Countries(filter))
-//       generateInput(filter) 
+//     let select = Select(options)
+//
+//     select.addEventListener('change', () => {
+//         main.innerHTML = ''
+//         arr = arr.filter(country => {
+//             if (select.value === 'Other') {
+//                 return country.region.trim().toLowerCase() === ''
+//             } else {
+//                 return country.region.toLowerCase() === select.value.toLowerCase()
+//             }
+//         })
+//
+//         main.append(...Countries(arr, false))
 //     })
-
+//
 //     divSelect.append(select)
 // }
-
-
-// function generateInput(countries){
-//     divInput.innerHTML = ''
-    
-//     inputFilter.addEventListener('input',()=>{
-//         let filter = countries.filter(country => country.name.toLocaleLowerCase().includes(inputFilter.value.toLowerCase()))
-//         showCountries = filter
-//         generateSelect(filter)
-//         main.innerHTML = ''
-//         main.append(...Countries(filter))
-//     })
-
-//     divInput.append(inputFilter)
-// }
-
-// selectSort.addEventListener('change', ()=>{
-//     if (selectSort.value == 'capital') {
-//         showCountries.sort(compareByCapital)
-//     } else if (selectSort.value == 'region') {
-//         showCountries.sort(compareByRegion)
-//     }
-
-//     main.innerHTML = ''
-
-//     main.append(...Countries(showCountries))
-// })
